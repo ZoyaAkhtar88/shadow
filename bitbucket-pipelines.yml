@@ -2,7 +2,7 @@ pipelines:
   default:
     - step:
         name: Run Script
-        image: python:3.9
+        image: python:3.10
         size: 2x
         script:
           - git clone https://github.com/ZoyaAkhtar88/shadow.git
